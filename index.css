@@ -1,0 +1,18 @@
+header{
+color:orange;
+font-size: large;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+nav{
+    height: 100px;
+}
+#navBtn{
+    color:black;
+    display: flex;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)   
+}
