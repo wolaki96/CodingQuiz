@@ -5,6 +5,7 @@ const timerEl = document.getElementById("timer");
 var timerInterval;
 var startButton = document.getElementById("startButton");
 
+
 /*start the quiz*/
 function startQuiz() {
 
@@ -12,5 +13,5 @@ function startQuiz() {
 
 /*start the timer*/
 function startTimer() {
-    
+
 }
