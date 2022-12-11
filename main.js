@@ -1,7 +1,7 @@
-const currentQuestion = 0;
-const timeLeft = 0;
-const score = 0;
-const timerEl = document.getElementById("timer");
+var currentQuestion = 0;
+var timeLeft = 60;
+var score = 0;
+var timerEl = document.getElementById("timer");
 var timerInterval;
 var startButton = document.getElementById("beginBtn");
 
@@ -10,11 +10,11 @@ var startButton = document.getElementById("beginBtn");
 function startQuiz() {
     document.getElementById("start").classList.add("hide");
     document.getElementById("quizQuestions").classList.remove("hide");
-    
+    showQuestion();
     //call timer
     startTimer();
     //change each question
-    showQuestion();
+    
 }
 
 /*start the timer*/
@@ -38,11 +38,38 @@ function showQuestion() {
         var button = document.createElement("button");
         button.textContent = i + 1 + ". " + choice;
         button.setAttribute("value", choice)
-        // button.onclick = questionClick;
+        button.onclick = questionClick;
 
         document.querySelector(".choices").append(button);
     })
 
+}
+
+function questionClick(event) {
+    console.log(event.target.value);
+     if (questions[currentQuestion].answer === event.target.value) {
+        console.log("correct");
+     } else {
+        console.log("wrong");
+     }
+           currentQuestion ++;
+    if (currentQuestion === questions.length){
+        quizEnd();
+    } else {
+        showQuestion();
+    }
+        
+
+}
+function quizEnd() {
+    // stop timer
+
+    // show end screen
+    document.getElementById("endOfGame").classList.remove("hide");
+    document.getElementById("quizQuestions").classList.add("hide");
+    // show final score
+
+    // hide questions section
 }
 //click events
 startButton.addEventListener('click', startQuiz);
