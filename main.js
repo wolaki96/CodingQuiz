@@ -47,7 +47,10 @@ function showQuestion() {
 
 function questionClick(event) {
     console.log(event.target.value);
+    let correct = ("Correct!")
+    let wrong = ("Incorrect :( ")
      if (questions[currentQuestion].answer === event.target.value) {
+        
         console.log("correct");
      } else {
         console.log("wrong");
