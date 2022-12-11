@@ -8,7 +8,8 @@ var startButton = document.getElementById("startButton");
 
 /*start the quiz*/
 function startQuiz() {
-
+    document.getElementById("start").classList.add("hide");
+    document.getElementById("quizQuestions").classList.remove("hide");
 }
 
 /*start the timer*/
